@@ -19,4 +19,4 @@ jobs:
       - name: phpunit setup
         uses: php-actions/phpunit@v3
       - name: dependencies
-        uses: composer install
+        run: composer install
