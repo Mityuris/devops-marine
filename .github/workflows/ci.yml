@@ -14,5 +14,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
+      - name: composer setup
+        uses: php-actions/composer@v6
+      - name: phpunit setup
+        uses: php-actions/phpunit@v3
       - name: dependencies
         uses: composer install
