@@ -8,9 +8,9 @@ class CardManager
         $dbName = "four_souls";
         $port = 3306;
         $userName = "root";
-        $userPassword = "";
+        $userPassword = "test";
         try {
-            $this->setDb(new PDO("mysql:host=localhost;dbname=$dbName;port=$port;charset=utf8mb4", $userName, $userPassword));
+            $this->setDb(new PDO("mysql:host=database;dbname=$dbName;port=$port;charset=utf8mb4", $userName, $userPassword));
         } catch (PDOException $error) {
             echo $error->getMessage();
         }
@@ -48,8 +48,9 @@ class CardManager
         $cards = [];
         $request = $this->db->prepare("SELECT * FROM `card` ORDER BY id");
         $request->execute();
-        $dataList = $request->fetchAll();
+        $dataList = $request->fetchAll()[0];
         foreach ($dataList as $data) {
+            echo "<script>console.log('{$dataList}')</script>";
             $card = new Card($data);
             $cards[] = $card;
         }

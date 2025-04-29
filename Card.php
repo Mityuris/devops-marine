@@ -12,7 +12,6 @@ class Card
         $this->hydrate($data);
     }
 
-    $etest=  ["one"=>"value","one"=>"value","one"=>"value"]
     public function hydrate(array $data)
     {
         foreach ($data as $key => $value) {
