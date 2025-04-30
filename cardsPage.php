@@ -8,15 +8,6 @@
         $cardsData = $cardManager->getAll();
         $counter = 0;
         ?>
-<!--        --><?php
-        foreach ($cardsData as $key) { #recupère toute les cartes
-            echo $key;
-//            $counter++; #compteur pour offset potentiel
-            ?>
-            <div><?php echo $key->getName() ?></div>
-        <?php
-        }
-        ?>
 <!--            <div class="card m-2 bg-secondary-subtle --><?php //echo $key->getCategory() ?><!-- " style="width:fit-content;"> <!-- creation carte avec description -->-->
 <!--                <div class="row no-gutters">-->
 <!--                    <div class="col-sm-5">-->

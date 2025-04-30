@@ -49,8 +49,8 @@ class CardManager
         $request = $this->db->prepare("SELECT * FROM `card` ORDER BY id");
         $request->execute();
         $dataList = $request->fetchAll()[0];
+        var_dump($dataList);
         foreach ($dataList as $data) {
-            echo "<script>console.log('{$dataList}')</script>";
             $card = new Card($data);
             $cards[] = $card;
         }
